@@ -1,0 +1,180 @@
+[gd_scene load_steps=6 format=3 uid="uid://b2pnj7vo70313"]
+
+[ext_resource type="Script" uid="uid://ckq12b7en6iq" path="res://2D/Scenes/TitleBg/title_bg.gd" id="1_qldfi"]
+
+[sub_resource type="Animation" id="Animation_pnyxm"]
+resource_name = "Exit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/RealBg:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.967924, 0.766319, 0.692613, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/RealBg/Logo:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-0.0047, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.792157, 0.509804, 0.611765, 1), Color(0.792157, 0.509804, 0.611765, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/StartHint:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.766667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.209112, 0.209112, 0.209112, 1), Color(0.207843, 0.207843, 0.207843, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qggox"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/RealBg:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.943299, 0.92856, 0.862897, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/RealBg/Logo:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.794077, 0.508262, 0.612824, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/StartHint:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.209112, 0.209112, 0.209112, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_h5s4e"]
+resource_name = "TextEffect"
+length = 1.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/StartHint:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.666667, 1.23333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.209112, 0.209112, 0.209112, 1), Color(0.490196, 0.490196, 0.490196, 0.796078), Color(0.209112, 0.209112, 0.209112, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h5s4e"]
+_data = {
+&"Exit": SubResource("Animation_pnyxm"),
+&"RESET": SubResource("Animation_qggox"),
+&"TextEffect": SubResource("Animation_h5s4e")
+}
+
+[node name="TitleBg" type="Node2D"]
+script = ExtResource("1_qldfi")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="RealBg" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.943299, 0.92856, 0.862897, 1)
+
+[node name="Logo" type="Label" parent="CanvasLayer/RealBg"]
+modulate = Color(0.794077, 0.508262, 0.612824, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -303.0
+offset_top = -224.0
+offset_right = 303.0
+offset_bottom = -69.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 113
+text = "Classicards"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationBg" type="ColorRect" parent="CanvasLayer/RealBg"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.335085, 0.335085, 0.335085, 1)
+
+[node name="Button" type="Button" parent="CanvasLayer/RealBg"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartHint" type="Label" parent="CanvasLayer"]
+modulate = Color(0.209112, 0.209112, 0.209112, 1)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -148.0
+offset_right = 150.0
+offset_bottom = -104.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "触摸任意位置开始游戏"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_h5s4e")
+}
+
+[connection signal="pressed" from="CanvasLayer/RealBg/Button" to="." method="_on_button_pressed"]
