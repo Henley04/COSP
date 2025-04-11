@@ -140,6 +140,7 @@ tracks/9/keys = {
 
 [sub_resource type="Animation" id="Animation_7i6cf"]
 resource_name = "special_effects\\skill"
+length = 1.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -147,10 +148,10 @@ tracks/0/path = NodePath("SubSkillView:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.166667),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.166667, 1.4),
+"transitions": PackedFloat32Array(1, 1, 10.9283),
 "update": 1,
-"values": [false, true]
+"values": [false, true, false]
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
@@ -192,9 +193,9 @@ tracks/4/path = NodePath("SubSkillView:modulate:a")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.9)
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.9, 1.36667)
 }
 tracks/5/type = "bezier"
 tracks/5/imported = false

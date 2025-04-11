@@ -6,7 +6,7 @@ func _ready() -> void:
 	print_debug('Ready!')
 	var Audio = AudioStreamPlayer.new()
 	add_child(Audio)
-	var GSFile = load("res://Audio/Music/Sword and Thunder.mp3")
+	var GSFile = load("res://Audio/Music/KARUT - Step by Step.ogg")
 	Audio.stream = GSFile
 	Audio.volume_db =- 19
 	Audio.play()
