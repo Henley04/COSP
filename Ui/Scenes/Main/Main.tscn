@@ -1,32 +1,295 @@
-[gd_scene format=3 uid="uid://c6eqq6gk30i8h"]
+[gd_scene load_steps=16 format=3 uid="uid://c6eqq6gk30i8h"]
 
-[node name="Main" type="Control"]
+[ext_resource type="Script" uid="uid://10s6aehwt2xj" path="res://Ui/Scenes/Main/main_ui.gd" id="1_pwe21"]
+[ext_resource type="PackedScene" uid="uid://bvth66kx60lk3" path="res://Ui/Scenes/Main/main_background.tscn" id="2_rd65l"]
+[ext_resource type="Texture2D" uid="uid://cummylndbjgqy" path="res://Texture/Hero.png" id="3_d70uo"]
+[ext_resource type="Texture2D" uid="uid://kdc4dohdmcaj" path="res://Texture/Education.png" id="4_ij6b2"]
+
+[sub_resource type="Animation" id="Animation_qq4wp"]
+resource_name = "Enter"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 30), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.966667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.333333, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 30), Vector2(0, 5), Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MainBackground:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.533333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 20), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_d70uo"]
+resource_name = "Exit"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.332),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_pwe21"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MainBackground:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 30)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rd65l"]
+_data = {
+&"Enter": SubResource("Animation_qq4wp"),
+&"Exit": SubResource("Animation_d70uo"),
+&"RESET": SubResource("Animation_pwe21")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qq4wp"]
+bg_color = Color(0.811765, 0.478431, 0.631373, 0.811765)
+skew = Vector2(0.2, 0)
+corner_radius_top_left = 11
+corner_radius_bottom_left = 11
+shadow_size = 5
+
+[sub_resource type="Theme" id="Theme_pwe21"]
+Panel/styles/panel = SubResource("StyleBoxFlat_qq4wp")
+
+[sub_resource type="LabelSettings" id="LabelSettings_waeh6"]
+font_size = 23
+
+[sub_resource type="LabelSettings" id="LabelSettings_d70uo"]
+font_size = 35
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d70uo"]
+bg_color = Color(0.988235, 0.988235, 0.988235, 0.866667)
+skew = Vector2(0.18, 0)
+border_width_left = 5
+border_width_top = 5
+corner_radius_top_left = 5
+corner_radius_top_right = 1
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="Theme" id="Theme_ij6b2"]
+Panel/styles/panel = SubResource("StyleBoxFlat_d70uo")
+
+[sub_resource type="LabelSettings" id="LabelSettings_y6awh"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="MainUi" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_pwe21")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="MainBackground" parent="." instance=ExtResource("2_rd65l")]
+layout_mode = 1
+offset_top = 30.0
+offset_bottom = 30.0
+
+[node name="MainUiAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_rd65l")
+}
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubFunction" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.035
+anchor_top = 0.851
+anchor_right = 0.825
+anchor_bottom = 0.952
+offset_left = -0.32
+offset_top = 0.263916
+offset_right = -0.320068
+offset_bottom = 0.263916
+grow_vertical = 0
+theme = SubResource("Theme_pwe21")
+
+[node name="HeroSelect" type="TextureButton" parent="Control/SubFunction"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 30.0
-offset_top = -70.0
-offset_right = 930.0
+offset_top = -122.0
+offset_right = 123.0
 grow_vertical = 0
-color = Color(0.828402, 0.612339, 0.688859, 0.898039)
+texture_normal = ExtResource("3_d70uo")
+ignore_texture_size = true
+stretch_mode = 5
 
-[node name="TextureButton" type="TextureButton" parent="ColorRect"]
+[node name="Label" type="Label" parent="Control/SubFunction/HeroSelect"]
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 100.0
-offset_top = -55.0
-offset_right = 140.0
-offset_bottom = -15.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "英雄"
+label_settings = SubResource("LabelSettings_waeh6")
+language = "zh_CN"
+
+[node name="Menu" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.807
+anchor_top = 0.841
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.335938
+offset_top = -102.968
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("4_ij6b2")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Control/Menu"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "教学方案"
+label_settings = SubResource("LabelSettings_d70uo")
+
+[node name="Status" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.03
+anchor_top = 0.024
+anchor_right = 0.26
+anchor_bottom = 0.138
+offset_right = 0.47998
+offset_bottom = 0.295998
+theme = SubResource("Theme_ij6b2")
+
+[node name="Label" type="Label" parent="Control/Status"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.502
+anchor_top = 0.19
+anchor_right = 1.0
+anchor_bottom = 0.644
+offset_left = 20.705
+offset_top = 7.185
+offset_right = -28.695
+offset_bottom = -6.135
+grow_horizontal = 2
 grow_vertical = 2
-tooltip_text = "抽取英雄"
+text = "player_name"
+label_settings = SubResource("LabelSettings_y6awh")
+
+[connection signal="animation_finished" from="MainUiAnimationPlayer" to="." method="_on_main_ui_animation_player_animation_finished"]
+[connection signal="pressed" from="Control/SubFunction/HeroSelect" to="." method="_on_hero_select_pressed"]
+[connection signal="pressed" from="Control/Menu" to="." method="_on_menu_pressed"]

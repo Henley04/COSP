@@ -1,5 +1,30 @@
-[gd_scene format=3 uid="uid://dogvtqr2hfw6g"]
+[gd_scene load_steps=7 format=3 uid="uid://dogvtqr2hfw6g"]
 
-[node name="MainPage" type="Node2D"]
+[ext_resource type="Script" uid="uid://87wwtd63adck" path="res://2D/Scenes/Main/main_page.gd" id="1_yke2p"]
+[ext_resource type="PackedScene" uid="uid://bvth66kx60lk3" path="res://Ui/Scenes/Main/main_background.tscn" id="3_acyp0"]
+[ext_resource type="PackedScene" uid="uid://c6eqq6gk30i8h" path="res://Ui/Scenes/Main/Main.tscn" id="3_evd4s"]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[sub_resource type="Animation" id="Animation_acyp0"]
+resource_name = "Enter"
+step = 0.0333
+
+[sub_resource type="Animation" id="Animation_iyw6u"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kq54c"]
+_data = {
+&"Enter": SubResource("Animation_acyp0"),
+&"RESET": SubResource("Animation_iyw6u")
+}
+
+[node name="弃用" type="Node2D"]
+script = ExtResource("1_yke2p")
+
+[node name="MainAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_kq54c")
+}
+
+[node name="Main" parent="." instance=ExtResource("3_evd4s")]
+
+[node name="MainBackground" parent="." instance=ExtResource("3_acyp0")]

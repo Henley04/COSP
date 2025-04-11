@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://nkq4mag6y743"
+path="res://.godot/imported/ミツキヨ - Formless Dream.mp3-7d114c7be59092aa14d38090e9a28a23.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/ミツキヨ - Formless Dream.mp3"
+dest_files=["res://.godot/imported/ミツキヨ - Formless Dream.mp3-7d114c7be59092aa14d38090e9a28a23.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

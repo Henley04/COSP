@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://whaw5trxxy34"]
+
+[ext_resource type="Script" uid="uid://pphyer2erv83" path="res://Logic/Templates/character.gd" id="1_2hucx"]
+[ext_resource type="Texture2D" uid="uid://c7o0kcmk2pv6d" path="res://2D/CharacterRes/cym.jpg" id="1_ui06e"]
+
+[node name="Character" type="Sprite2D"]
+position = Vector2(195, 234)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_ui06e")
+script = ExtResource("1_2hucx")

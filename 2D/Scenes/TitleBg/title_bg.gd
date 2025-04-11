@@ -10,7 +10,7 @@ signal AnimaBgEnd # When animationBg's modulate is 0.
 func _ready() -> void:
 	$CanvasLayer/RealBg/AnimationBg.self_modulate.a = 1
 	$AnimationPlayer.play('TextEffect')
-	pass # Replace with function body.
+	$MessagePopup.show_message('[Version:ALPHA-0.0.1]')
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -28,4 +28,16 @@ func title_char_appear():
 
 func _on_button_pressed() -> void:
 	print_debug('GameStart pressed.')
+	var GSAudio = AudioStreamPlayer.new()
+	add_child(GSAudio)
+	var GSFile = load("res://Audio/Sound/Attention.wav")
+	GSAudio.stream = GSFile
+	GSAudio.play()
+	$AudioStreamPlayer.volume_db =- 20
 	$AnimationPlayer.play('Exit')
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == 'Exit':
+		#Change to main.
+		get_tree().change_scene_to_file("res://Ui/Scenes/Main/Main.tscn")

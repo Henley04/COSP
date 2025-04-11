@@ -1,0 +1,42 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://bv3h3b0s6y2rn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iyl7u"]
+bg_color = Color(0.6, 0.6, 0.6, 0.458824)
+skew = Vector2(0.2, 0)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+shadow_color = Color(0, 0, 0, 0.65098)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4rdet"]
+bg_color = Color(0.547975, 0.676924, 0.940179, 0.847059)
+skew = Vector2(0.2, 0)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_saum0"]
+bg_color = Color(0.439216, 0.592157, 0.913725, 0.847059)
+skew = Vector2(0.2, 0)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j8ldp"]
+bg_color = Color(0.374584, 0.593957, 0.96841, 1)
+skew = Vector2(0.2, 0)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+
+[resource]
+Button/colors/font_color = Color(0.961939, 0.842485, 0.843999, 1)
+Button/colors/font_hover_color = Color(0.969306, 0.831317, 0.877261, 1)
+Button/styles/focus = SubResource("StyleBoxFlat_iyl7u")
+Button/styles/hover = SubResource("StyleBoxFlat_4rdet")
+Button/styles/normal = SubResource("StyleBoxFlat_saum0")
+Button/styles/pressed = SubResource("StyleBoxFlat_j8ldp")

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cxs1harj5uhic"
+path="res://.godot/imported/銉熴儎銈儴 - Aira.mp3-0d05bc35f7f7c6594634356a9fda1ca6.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/銉熴儎銈儴 - Aira.mp3"
+dest_files=["res://.godot/imported/銉熴儎銈儴 - Aira.mp3-0d05bc35f7f7c6594634356a9fda1ca6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

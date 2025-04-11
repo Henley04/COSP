@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://j2slmnjei0n4"
+path="res://.godot/imported/Constant Accident.mp3-cd2b9a31a709935d06af8ad2dc8c48da.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/Constant Accident.mp3"
+dest_files=["res://.godot/imported/Constant Accident.mp3-cd2b9a31a709935d06af8ad2dc8c48da.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://lc1fnufnlv82"
+path="res://.godot/imported/Sword and Thunder.mp3-5a73566d4c7203e8230285fe1d43b6c1.mp3str"
+
+[deps]
+
+source_file="res://Ui/Sword and Thunder.mp3"
+dest_files=["res://.godot/imported/Sword and Thunder.mp3-5a73566d4c7203e8230285fe1d43b6c1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

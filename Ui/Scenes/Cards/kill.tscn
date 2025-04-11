@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnc0nnlilvw1r"]
+
+[ext_resource type="Texture2D" uid="uid://c7vwu4k45p2ck" path="res://Ui/Scenes/Cards/Textures/kill.jpg" id="1_kp1yv"]
+[ext_resource type="Script" uid="uid://cpbkot4c2dijk" path="res://Ui/Scenes/Cards/kill.gd" id="2_kp1yv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_40op0"]
+font_size = 116
+
+[node name="Kill" type="TextureRect"]
+texture = ExtResource("1_kp1yv")
+expand_mode = 3
+script = ExtResource("2_kp1yv")
+
+[node name="Describe" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -11.5
+offset_right = 8.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "来"
+label_settings = SubResource("LabelSettings_40op0")
+
+[node name="ActiveButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="ActiveButton" to="." method="_on_active_button_pressed"]

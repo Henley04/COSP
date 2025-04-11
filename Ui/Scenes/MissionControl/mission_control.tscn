@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://d06f2rtvxi7eg"]
+
+[ext_resource type="Script" uid="uid://dwwbbft4ohlxp" path="res://Ui/Scenes/MissionControl/mission_control.gd" id="1_hyulb"]
+[ext_resource type="Theme" uid="uid://bv3h3b0s6y2rn" path="res://Ui/Themes/Normal.tres" id="1_q7hwt"]
+[ext_resource type="Texture2D" uid="uid://dw4ixwwq62p02" path="res://Ui/Scenes/MissionControl/98928c11-7841-4c3c-a1a1-b5bf86935584.jpg" id="1_uqjot"]
+[ext_resource type="AudioStream" uid="uid://cxvyfbvq6sgkb" path="res://Audio/Music/Shooting Stars - KARUT.mp3" id="2_5tghu"]
+
+[node name="MissionControl" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hyulb")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_5tghu")
+volume_db = -16.17
+autoplay = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_uqjot")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.455
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(1, 1, 1, 0.745098)
+
+[node name="PlayAi" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.675
+anchor_top = 0.085
+anchor_right = 0.925
+anchor_bottom = 0.235
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("1_q7hwt")
+theme_override_font_sizes/font_size = 43
+text = "与Ai对战"
+
+[connection signal="pressed" from="PlayAi" to="." method="_on_play_ai_pressed"]

@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://r6r330705xkq"]
+
+[ext_resource type="Texture2D" uid="uid://c7o0kcmk2pv6d" path="res://2D/CharacterRes/cym.jpg" id="1_cbmht"]
+[ext_resource type="Texture2D" uid="uid://cux8fpde8j1md" path="res://Texture/BombParticle.png" id="1_hlrfg"]
+[ext_resource type="Script" uid="uid://btnu4l07fo2g0" path="res://2D/SpecialEffects/bomb.gd" id="2_yvt62"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hlrfg"]
+particle_flag_disable_z = true
+spread = 153.466
+initial_velocity_min = 913.87
+initial_velocity_max = 1000.0
+gravity = Vector3(0, 98, 0)
+
+[node name="Bomb" type="Sprite2D"]
+position = Vector2(344, 151)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("1_cbmht")
+region_rect = Rect2(400, 400, 400, 400)
+script = ExtResource("2_yvt62")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(0, -1100)
+amount = 100
+texture = ExtResource("1_hlrfg")
+lifetime = 2.0
+process_material = SubResource("ParticleProcessMaterial_hlrfg")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+
+[connection signal="bomb_boom" from="." to="." method="_on_bomb_boom"]
